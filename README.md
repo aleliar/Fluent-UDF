@@ -1,7 +1,7 @@
 # Fluent-UDF
 Some easy UDF for Fluent 
 
-********************************Coded base on centOS7*****************************
+********************************Coded on centOS-7*****************************
 
 tranSient.c
 
@@ -11,11 +11,13 @@ tranSient.c
 
 3.A transient time varying injection mass flow rate, define the start fuel flow rate as fuel_m1,  the final fuel flow rate as fuel_m2.
 
-4.Place the tranSien.c under the same path as your case&data file.
+4.Time vary from 0s to 0.6s, simply change the number if you want other time range.
 
-5.Open fluent, read case, User-define, Compiled, choose the UDF, build the lib*, load.
+5.Place the tranSien.c under the same path as your case&data file.
 
-6.Change the inlet,outlet and injection with UDF
+6.Way to use it:
+1)Open fluent, read case, User-define, Compiled, choose the UDF, build the lib*, load.
+2)Change the inlet,outlet and injection with UDF
 
 Notice:
 
