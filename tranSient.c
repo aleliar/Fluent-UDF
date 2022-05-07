@@ -24,7 +24,7 @@ DEFINE_PROFILE(transient_mdot, thread, position)
 DEFINE_PROFILE(transient_pressure, thread, position)
 {
     real flow_time = CURRENT_TIME;
-    real p1 = 112940; real p2 = 121560;
+    real p1 = -4500; real p2 = 4120;
     real pout;
     face_t f;
 
@@ -38,12 +38,10 @@ DEFINE_PROFILE(transient_pressure, thread, position)
 /* transient injection flow rate*/
 DEFINE_DPM_INJECTION_INIT(fuel,I)
 {
-    Particle *p;
     real flow_time = RP_Get_Real("flow-time");
+
     real fuel_m1=0.012667, fuel_m2=0.014057;
 
-    loop(p,I->p_init)
-    {
-        p->flow_rate =   (fuel_m1+(fuel_m2-fuel_m1)*flow_time/0.6)/12;
-    }
+    I->total_flow_rate = (fuel_m1+(fuel_m2-fuel_m1)*flow_time/0.6)/12;
+
 }
